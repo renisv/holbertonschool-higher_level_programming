@@ -1,13 +1,15 @@
-#!/usr/bin/python3
-from sys import argv
+#!/usr/bin/env python3
+
 if __name__ == "__main__":
-    nr_of_args = len(argv) - 1
-
-    if nr_of_args == 0:
-        print("{}".format(nr_of_args))
-    else:
-        sum = 0
-
-        for i in range(1, len(argv)):
-            sum += int(argv[i])
-        print("{}".format(sum))
+    import sys
+    
+    # Initialize sum to 0
+    total = 0
+    
+    # Iterate through all arguments starting from index 1 (skipping the script name)
+    for arg in sys.argv[1:]:
+        # Convert each argument to integer and add to total
+        total += int(arg)
+    
+    # Print the result followed by a new line
+    print(total)
