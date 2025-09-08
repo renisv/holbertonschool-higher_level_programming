@@ -3,6 +3,7 @@
 def no_c(my_string):
     new_string = []
     for element in my_string:
-        if element != "c" or "C":
+        if element != "c" and element != "C":
             new_string.append(element)
+
     return new_string
