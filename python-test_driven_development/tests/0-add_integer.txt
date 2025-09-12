@@ -1,22 +1,59 @@
->>> add_integer = __import__('0-add_integer').add_integer
+The ``add_integer`` module
+==========================
 
->>> add_integer(2, 5)
-7
 
->>> add_integer(2.7, 5)
-7
+This is an example text file in reStructuredText format. 
 
->>> add_integer(5)
-103
+	>>> add_integer = __import__("0-add_integer").add_integer
 
->>> add_integer("Hi", 5)
-Traceback (most recent call last):
-TypeError: a must be an integer
+	Testing for addition of two positive numbers
+	
+	>>> add_integer(2, 3)
+	5
 
->>> add_integer(float('nan'))
-Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
+	Testing for addition of one positive number and one negative number
+	
+	>>> add_integer(-2, 3)
+	1
 
->>> add_integer(float('inf'))
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
+	Testing for addition of two negative numbers
+
+	>>> add_integer(-3, -3)
+	-6
+
+	Testing calling the function with only one argument in this case argument a
+	
+	>>> add_integer(2)
+	100
+
+	Testing for exception raised from the function if (a) argument is not a integer
+
+	>>> add_integer("string", 25)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	Testing for exception raised from the function if (b) argument is not a integer
+
+	>>> add_integer(2, "string")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+	
+	Testing for exception raised if a not defined variable is passed as argument
+
+	>>> add_integer(hello)
+	Traceback (most recent call last):
+	NameError: name 'hello' is not defined
+
+	Testing for exception raised if a infinite number is given as argument
+
+	>>> add_integer(int('inf'), 5)
+	Traceback (most recent call last):
+	ValueError: invalid literal for int() with base 10: 'inf'
+
+	>>> add_integer(float('inf'), 5)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+	
+	>>> add_integer(float('nan'), 10)
+	Traceback (most recent call last):
+        ValueError: cannot convert float NaN to integer
