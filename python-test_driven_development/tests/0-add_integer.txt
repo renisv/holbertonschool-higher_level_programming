@@ -2,3 +2,13 @@
 
 >>> add_integer(2, 5)
 7
+
+>>> add_integer(2.7, 5)
+7
+
+>>> add_integer(5)
+103
+
+>>> add_integer("Hi", 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
