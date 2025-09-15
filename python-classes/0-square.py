@@ -3,5 +3,6 @@
 This creates an empty class square
 """
 
+
 class Square:
     pass
