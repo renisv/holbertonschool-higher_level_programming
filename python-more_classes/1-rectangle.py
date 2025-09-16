@@ -4,15 +4,15 @@
 
 class Rectangle:
     """this class defines a rectangle"""
-    def __init__(self, width = 0, height = 0):
+    def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         """get current width"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """give value to width"""
@@ -21,7 +21,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """get current height"""
