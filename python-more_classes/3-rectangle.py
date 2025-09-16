@@ -48,12 +48,12 @@ class Rectangle:
 
     def __str__(self):
         """"prints the rectangle with #"""
-        rect = []
-        if self.__width == 0 or self.__height == 0:
+        rectangle = []
+        if self.width == 0 or self.height == 0:
             return ""
-        for h in range(self.__height):
-            for w in range(self.__width):
-                rect.append("#")
-            if h != self.__height - 1:
-                rect.append("\n")
-        return "".join(rect)
+        for i in range(self.height):
+            for j in range(self.width):
+                rectangle.append("#")
+            if i != self.height - 1:
+                rectangle.append("\n")
+        return "".join(rectangle)
