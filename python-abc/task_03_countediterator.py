@@ -1,24 +1,48 @@
 #!/usr/bin/env python3
-""" extends the built-in iterator"""
-
 
 class CountedIterator:
     """A custom iterator that counts the number of items iterated over."""
-
+    
     def __init__(self, iterable):
-        """constructs the class"""
+        """
+        Initialize the CountedIterator with an iterable.
+        
+        Args:
+            iterable: Any iterable object (list, tuple, etc.)
+        """
         self.iterator = iter(iterable)
         self.counter = 0
-
+    
     def get_count(self):
-        """counts"""
+        """
+        Return the current count of items iterated over.
+        
+        Returns:
+            int: Number of items iterated so far
+        """
         return self.counter
-
+    
     def __next__(self):
-        """Increment counter and get next item in one line"""
+        """
+        Get the next item from the iterator and increment the counter.
+        
+        Returns:
+            The next item from the iterator
+            
+        Raises:
+            StopIteration: When there are no more items to iterate
+        """
+        # First try to get the next item
+        item = next(self.iterator)
+        # If successful, increment counter and return the item
         self.counter += 1
-        return next(self.iterator)
-
+        return item
+    
     def __iter__(self):
-        """returns self"""
+        """
+        Return the iterator object itself.
+        
+        Returns:
+            CountedIterator: The iterator object
+        """
         return self
