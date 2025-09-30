@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""module to save an object to a text file, using a JSON representation"""
+
 
 def save_to_json_file(my_obj, filename):
     """Saves an object to a text file, using a JSON representation.
