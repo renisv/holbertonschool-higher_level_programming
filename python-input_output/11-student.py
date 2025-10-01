@@ -19,3 +19,10 @@ class Student:
             if key in attrs:
                 new_dict[key] = self.__dict__[key]
         return new_dict
+
+    def reload_from_json(self, json):
+        """func to replace values"""
+        for key in json.keys():
+            if key in self.__dict__.keys():
+                self.__dict__[key] = json[key]
+        return self.__dict__
