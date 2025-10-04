@@ -9,7 +9,7 @@ def serialize_and_save_to_file(data, filename):
     try:
         with open(filename, "w", encoding="UTF-8") as file:
             json.dump(data, file)
-    except FileNotFound:
+    except FileNotFoundError:
         print(f"{filename} not found")
 
 
@@ -18,7 +18,7 @@ def load_and_deserialize(filename):
     try:
         with open(filename, "r", encoding="UTF-8") as file:
             python_object = json.load(file)
-            return (f"{python_object}")
-    except FileNotFound:
+            return python_object
+    except FileNotFoundError:
         print(f"{filename} not found")
-        return ""
+        return {}
