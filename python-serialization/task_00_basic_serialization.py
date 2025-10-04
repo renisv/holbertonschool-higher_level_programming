@@ -16,7 +16,9 @@ def serialize_and_save_to_file(data, filename):
 def load_and_deserialize(filename):
     """json deserialization"""
     try:
-        with open(filename, "r", encoding="UTF-8")as file:
+        with open(filename, "r", encoding="UTF-8") as file:
             python_object = json.load(file)
+            return (f"{python_object}")
     except FileNotFound:
         print(f"{filename} not found")
+        return ""
