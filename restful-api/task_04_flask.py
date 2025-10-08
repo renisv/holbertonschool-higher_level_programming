@@ -42,10 +42,6 @@ def add_user():
     
     username = user_data['username']
     
-    # Check if username already exists
-    if username in users:
-        return jsonify({"error": "Username already exists"}), 400
-    
     # Create user object with all provided fields
     new_user = {
         "username": username,
@@ -54,7 +50,7 @@ def add_user():
         "city": user_data.get('city', '')
     }
     
-    # Add user to dictionary
+    # Add user to dictionary (allow overwriting existing users)
     users[username] = new_user
     
     # Return success response
